@@ -3,6 +3,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const config = require('./config/config');
+
+const appInsights = require("applicationinsights");
+appInsights.setup(config.appSettings.appInsightKey);
+appInsights.start();
+
 const mongoose = require('mongoose');
 const chalk = require('chalk');
 
